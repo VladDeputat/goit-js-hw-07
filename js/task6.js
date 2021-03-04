@@ -15,7 +15,7 @@
 const inputRef = document.querySelector("#validation-input");
 
 inputRef.addEventListener("blur", function (event) {
-  if (inputRef.value.length == inputRef.dataset.length) {
+  if (inputRef.value.length === +inputRef.dataset.length) {
     event.target.classList.remove("invalid");
     event.target.classList.add("valid");
   } else {

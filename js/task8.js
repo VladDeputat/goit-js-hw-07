@@ -33,6 +33,7 @@ let randomColor = function () {
 const createBoxes = (amount) => {
   let width = 30;
   let height = 30;
+  const newBoxes = [];
 
   for (let i = 0; i < amount; i += 1) {
     const newBox = document.createElement("div");
@@ -40,8 +41,10 @@ const createBoxes = (amount) => {
       "style",
       `width: ${width + i * 10}px; height: ${height + i * 10}px; margin: 10px; background-color: ${randomColor()};`
     );
-    containerRef.append(newBox);
+    newBoxes.push(newBox);
   }
+
+  containerRef.append(...newBoxes);
 };
 
 const destroyBoxes = () => {
